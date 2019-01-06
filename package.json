@@ -4,7 +4,7 @@
   "description": "Happy new year!",
   "main": "index.js",
   "scripts": {
-    "demo": "parcel demo/index.html watch",
+    "demo": "parcel demo/index.html --out-dir demo/dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +26,9 @@
     "react-dom": "^16.7.0-alpha.2"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.11.0"
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "parcel-bundler": "^1.11.0",
+    "typescript": "^3.2.2"
   }
 }
