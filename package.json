@@ -4,6 +4,7 @@
   "description": "Happy new year!",
   "main": "index.js",
   "scripts": {
+    "demo": "parcel demo/index.html watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/y-takey/react-fireworks/issues"
   },
-  "homepage": "https://github.com/y-takey/react-fireworks#readme"
+  "homepage": "https://github.com/y-takey/react-fireworks#readme",
+  "dependencies": {
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0"
+  }
 }
