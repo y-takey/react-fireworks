@@ -1,6 +1,7 @@
 import * as React from "react";
 
 type Props = {
+  background?: string;
   width?: number;
   height?: number;
   maxFireworks?: number;
@@ -111,7 +112,7 @@ const update = (width: number, height: number, firework: Firework) => {
   }
 };
 
-const Fireworks = ({ width, height, maxFireworks, maxSparks }: Props) => {
+const Fireworks = ({ background, width, height, maxFireworks, maxSparks }: Props) => {
   const canvas = React.useRef(null);
   const [fireworks, updator] = React.useState(
     generateFireworks(width, height, maxFireworks, maxSparks),
@@ -128,10 +129,11 @@ const Fireworks = ({ width, height, maxFireworks, maxSparks }: Props) => {
     );
   });
 
-  return <canvas ref={canvas} width={width} height={height} />;
+  return <canvas ref={canvas} width={width} height={height} style={{ background }} />;
 };
 
 Fireworks.defaultProps = {
+  background: "black",
   width: 800,
   height: 500,
   maxFireworks: 5,
