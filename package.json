@@ -1,0 +1,23 @@
+{
+  "name": "react-fireworks",
+  "version": "1.0.0",
+  "description": "Happy new year!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/y-takey/react-fireworks.git"
+  },
+  "keywords": [
+    "react",
+    "fireworks"
+  ],
+  "author": "y-takey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/y-takey/react-fireworks/issues"
+  },
+  "homepage": "https://github.com/y-takey/react-fireworks#readme"
+}
