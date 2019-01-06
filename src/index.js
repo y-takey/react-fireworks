@@ -1,7 +1,5 @@
 import * as React from "react";
 
-const maxFireworks = 5;
-const maxSparks = 50;
 const radius = 4;
 
 const times = (n, func) =>
@@ -83,27 +81,38 @@ const update = (width, height, firework) => {
   }
 };
 
-class Fireworks extends React.Component {
-  componentDidMount() {
-    const canvas = document.getElementById("myCanvas");
-    const context = canvas.getContext("2d");
-    const { width, height } = canvas;
-    let fireworks = generateFireworks(width, height, maxFireworks, maxSparks);
+const Fireworks = () => {
+  const canvas = React.useRef(null);
+  const width = 800;
+  const height = 500;
+  const maxFireworks = 5;
+  const maxSparks = 50;
+  const [fireworks, updator] = React.useState(
+    generateFireworks(width, height, maxFireworks, maxSparks),
+  );
 
-    function explode() {
+  React.useEffect(() => {
+    const context = canvas.current.getContext("2d");
+    let frameId = null;
+
+    const explode = () => {
       context.clearRect(0, 0, width, height);
-      fireworks = fireworks.map((firework, index) => {
-        draw(context, firework, index);
-        return update(width, height, firework);
-      });
-      window.requestAnimationFrame(explode);
-    }
-    window.requestAnimationFrame(explode);
-  }
+      updator(
+        fireworks.map((firework, index) => {
+          draw(context, firework, index);
+          return update(width, height, firework);
+        }),
+      );
+      frameId = window.requestAnimationFrame(explode);
+    };
+    frameId = window.requestAnimationFrame(explode);
 
-  render() {
-    return <canvas id="myCanvas" width="800" height="800" />;
-  }
-}
+    return () => {
+      window.cancelAnimationFrame(frameId);
+    };
+  });
+
+  return <canvas ref={canvas} width={width} height={height} />;
+};
 
 export default Fireworks;
