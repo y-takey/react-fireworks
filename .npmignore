@@ -1,0 +1,6 @@
+/.cache
+/demo
+/src
+.editorconfig
+.travis.yml
+yarn-error.log
