@@ -1,6 +1,6 @@
 {
   "name": "react-fireworks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Happy new year!",
   "main": "dist/index.js",
   "scripts": {
