@@ -1,5 +1,5 @@
 {
-  "name": "react-fireworks",
+  "name": "@y-takey/react-fireworks",
   "version": "1.0.1",
   "description": "Happy new year!",
   "main": "dist/index.js",
@@ -8,9 +8,9 @@
     "build": "parcel build src/index.tsx",
     "preversion": "yarn build",
     "postversion": "git push --tags && git push",
-    "publish:patch": "yarn version --patch && yarn publish && echo \"Successfully released version $npm_package_version!\"",
-    "publish:minor": "yarn version --minor && yarn publish && echo \"Successfully released version $npm_package_version!\"",
-    "publish:major": "yarn version --major && yarn publish && echo \"Successfully released version $npm_package_version!\"",
+    "publish:patch": "yarn version --patch && yarn publish --access public && echo \"Successfully released version $npm_package_version!\"",
+    "publish:minor": "yarn version --minor && yarn publish --access public && echo \"Successfully released version $npm_package_version!\"",
+    "publish:major": "yarn version --major && yarn publish --access public && echo \"Successfully released version $npm_package_version!\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
